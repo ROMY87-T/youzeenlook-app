@@ -1,30 +1,30 @@
-# import streamlit as st
+import streamlit as st
+from ai_model import recommend_outfits
+import json
 
+# Set page configuration
 st.set_page_config(page_title="YouzeenLook - AI Fashion Assistant", layout="wide")
 
-
-
+# App title and description
 st.title("🧠 YouzeenLook - AI Fashion Assistant")
-st.write("Welcome to YouzeenLook! Let us help you find the perfect outfits based on your height, weight, and skin tone.")
+st.write("Find your perfect outfit based on your height, weight, and skin tone.")
 
-# User Inputs
-height = st.number_input("📏 Your Height (cm):", min_value=100, max_value=250)
-weight = st.number_input("⚖️ Your Weight (kg):", min_value=30, max_value=200)
-skin_tone = st.selectbox("🎨 Skin Tone:", ["Light", "Wheatish", "Tan", "Dark"])
+# User inputs
+height = st.number_input("Height (cm)", min_value=100, max_value=250)
+weight = st.number_input("Weight (kg)", min_value=30, max_value=200)
+skin_tone = st.selectbox("Skin Tone", ["Light", "Wheatish", "Tan", "Dark"])
 
-# Submit Button
-if st.button("Show Outfit Recommendations"):
-    st.success(f"Based on your height: {height} cm, weight: {weight} kg, and skin tone: {skin_tone}, here are some suggestions:")
+# Recommendation button
+if st.button("Recommend Outfits"):
+    results = recommend_outfits(height, weight, skin_tone)
+    
+    if results:
+        st.success("Here are your recommended outfits:")
+        for item in results:
+            st.markdown(f"- 👕 {item}")
+    else:
+        st.warning("No suitable outfits found for your profile.")
 
-    st.markdown("""
-    - 👚 Light-colored top  
-    - 👖 Dark jeans or trousers  
-    - 👗 Medium-length dress for formal occasions  
-    - 🧥 Try layers with soft tones for contrast
-    """)
-    st.caption("👓 Augmented Reality (AR) try-on coming soon!")
+# Coming feature notice
+st.caption("👓 Coming soon: Try on your favorite outfits in Augmented Reality with YouzeenLook.")
 
-# Footer
-st.markdown("---")
-st.caption("Powered by YouzeenLook | AI for Fashion")
-youzeenlook-app
