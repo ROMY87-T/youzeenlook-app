@@ -1,7 +1,7 @@
 # import streamlit as st
 
 st.set_page_config(page_title="YouzeenLook - AI Fashion Assistant", layout="wide")
-Fix layout value in set_page_config
+
 
 
 st.title("🧠 YouzeenLook - AI Fashion Assistant")
