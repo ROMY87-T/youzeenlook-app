@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Light Blue Shirt with Black Jeans",
+    "skin_tones": ["Light", "Wheatish", "Tan"]
+  },
+  {
+    "name": "White T-shirt with Navy Pants",
+    "skin_tones": ["Dark", "Tan"]
+  },
+  {
+    "name": "Beige Blazer with White Shirt",
+    "skin_tones": ["Light", "Wheatish"]
+  },
+  {
+    "name": "Olive Green Hoodie with Denim",
+    "skin_tones": ["Tan", "Dark"]
+  },
+  {
+    "name": "Black Dress with Red Accessories",
+    "skin_tones": ["Wheatish", "Dark"]
+  }
+]
