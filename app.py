@@ -1,6 +1,7 @@
 # import streamlit as st
 
-st.set_page_config(page_title="YouzeenLook - AI Fashion Assistant", layout="centered")
+st.set_page_config(page_title="YouzeenLook - AI Fashion Assistant", layout="wide")
+
 
 st.title("🧠 YouzeenLook - AI Fashion Assistant")
 st.write("Welcome to YouzeenLook! Let us help you find the perfect outfits based on your height, weight, and skin tone.")
