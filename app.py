@@ -33,8 +33,10 @@ st.markdown("## 👗 Try AI Outfit Recommendation")
 height = st.slider("Height (cm)", min_value=100, max_value=220, value=170)
 weight = st.slider("Weight (kg)", min_value=30, max_value=150, value=65)
 skin_tone = st.selectbox("Skin Tone", ["Light", "Medium", "Dark"])
+gender = st.selectbox("Gender", ["Male", "Female"])
 
-outfits = recommend_outfits(height, weight, skin_tone)
+outfits = recommend_outfits(height, weight, skin_tone, gender)
+
 if outfits:
     st.success("Suggested outfits:")
     for outfit in outfits:
