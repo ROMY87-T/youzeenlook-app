@@ -1,4 +1,4 @@
-from ai_model import get_recommendation
+from ai_model import recommend_outfits
 import streamlit as st
 from streamlit.components.v1 import html
 
