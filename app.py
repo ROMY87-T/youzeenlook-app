@@ -34,10 +34,14 @@ height = st.slider("Height (cm)", min_value=100, max_value=220, value=170)
 weight = st.slider("Weight (kg)", min_value=30, max_value=150, value=65)
 skin_tone = st.selectbox("Skin Tone", ["Light", "Medium", "Dark"])
 
-if st.button("Get Outfit Suggestion"):
-    name, image = get_recommendation(height, weight, skin_tone)
-    st.success(f"Suggested: {name}")
-    st.image(image, caption=name)
+outfits = recommend_outfits(height, weight, skin_tone)
+if outfits:
+    st.success("Suggested outfits:")
+    for outfit in outfits:
+        st.markdown(f"- 👕 {outfit}")
+    st.image("https://source.unsplash.com/400x400/?fashion,outfit", caption="Sample Outfit")
+else:
+    st.warning("No suitable outfit found.")
 
 st.divider()
 
