@@ -10,7 +10,8 @@ def recommend_outfits(height, weight, skin_tone, gender):
     recommended = []
 
     for item in outfits:
-       if skin_tone in item["skin_tones"] and item["gender"].lower() == gender.lower():
+       if "gender" in item and skin_tone in item["skin_tones"] and item["gender"].lower() == gender.lower():
+
 
             recommended.append(item["name"])
 
