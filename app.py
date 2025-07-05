@@ -34,8 +34,9 @@ weight = st.slider("Weight (kg)", min_value=30, max_value=150, value=65)
 skin_tone = st.selectbox("Skin Tone", ["Light", "Medium", "Dark"])
 
 if st.button("Get Outfit Suggestion"):
-    st.success(f"Suggested outfit for {height}cm, {weight}kg, skin tone: {skin_tone} 🧾")
-    st.image("https://source.unsplash.com/400x400/?fashion,outfit", caption="Your AI-picked outfit")
+    name, image = get_recommendation(height, weight, skin_tone)
+    st.success(f"Suggested: {name}")
+    st.image(image, caption=name)
 
 st.divider()
 
