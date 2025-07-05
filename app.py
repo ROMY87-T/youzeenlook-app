@@ -1,3 +1,4 @@
+from ai_model import get_recommendation
 import streamlit as st
 from streamlit.components.v1 import html
 
