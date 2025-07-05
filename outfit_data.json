@@ -1,22 +1,37 @@
 [
   {
     "name": "Light Blue Shirt with Black Jeans",
-    "skin_tones": ["Light", "Wheatish", "Tan"]
+    "skin_tones": ["Light", "Wheatish", "Tan"],
+    "gender": "Male"
   },
   {
     "name": "White T-shirt with Navy Pants",
-    "skin_tones": ["Dark", "Tan"]
+    "skin_tones": ["Dark", "Tan"],
+    "gender": "Male"
   },
   {
     "name": "Beige Blazer with White Shirt",
-    "skin_tones": ["Light", "Wheatish"]
+    "skin_tones": ["Light", "Wheatish"],
+    "gender": "Male"
   },
   {
     "name": "Olive Green Hoodie with Denim",
-    "skin_tones": ["Tan", "Dark"]
+    "skin_tones": ["Tan", "Dark"],
+    "gender": "Male"
   },
   {
     "name": "Black Dress with Red Accessories",
-    "skin_tones": ["Wheatish", "Dark"]
+    "skin_tones": ["Wheatish", "Dark"],
+    "gender": "Female"
+  },
+  {
+    "name": "Floral Summer Dress with Sandals",
+    "skin_tones": ["Light", "Wheatish"],
+    "gender": "Female"
+  },
+  {
+    "name": "Elegant Evening Gown with Silver Heels",
+    "skin_tones": ["Tan", "Dark"],
+    "gender": "Female"
   }
 ]
