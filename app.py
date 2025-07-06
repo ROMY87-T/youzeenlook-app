@@ -147,7 +147,8 @@ weight = st.number_input("⚖️ Your weight (kg)", min_value=30, max_value=200,
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file).convert('RGB')
-    st.image(image, caption="Uploaded Image", use_column_width=True)
+    st.image(image, caption="Uploaded Image", use_container_width=True)
+
 
     skin_color = extract_skin_color(image)
     body_shape = classify_body_shape(gender, height, weight)
