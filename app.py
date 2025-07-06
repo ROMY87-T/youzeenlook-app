@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import cv2
 import json
-import requests
 from PIL import Image
 from matplotlib.colors import rgb_to_hsv
 
@@ -12,16 +11,13 @@ def extract_skin_tone(image):
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
     gray = cv2.cvtColor(image_rgb, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray, 1.3, 5)
-
     if len(faces) == 0:
         return "Unknown"
-
     (x, y, w, h) = faces[0]
     face_roi = image_np[y:y+h, x:x+w]
     center = face_roi[h//2-10:h//2+10, w//2-10:w//2+10]
     avg_color = np.mean(center.reshape(-1, 3), axis=0) / 255.0
     hsv = rgb_to_hsv(np.array([avg_color]))[0]
-
     h, s, v = hsv
     if v < 0.35:
         return "Dark"
@@ -73,47 +69,53 @@ def find_best_match(user_data, outfits):
         if o["body_shape"] == user_data["body_shape"]:
             score += 1
         return score
-
     outfits_sorted = sorted(outfits, key=similarity, reverse=True)
     return outfits_sorted[0] if outfits_sorted else None
 
-st.set_page_config(page_title="AI Fashion Assistant", layout="centered")
-st.title("🧠👗 AI Fashion Assistant with Visual Recommendations")
+st.set_page_config(page_title="YouzeenLook - AI Fashion Assistant", layout="centered")
+st.title("👗 Welcome to YouzeenLook")
+st.markdown("""
+Welcome to **YouzeenLook**, your personal AI Fashion Assistant!
 
-uploaded_file = st.file_uploader("📸 Upload a clear photo of your face", type=["jpg", "jpeg", "png"])
-gender = st.selectbox("👤 Select your gender", ["Male", "Female"])
-height = st.number_input("📏 Your height (cm)", min_value=100, max_value=250, value=170)
-weight = st.number_input("⚖️ Your weight (kg)", min_value=30, max_value=200, value=70)
+This smart tool helps you find suitable outfits based on your:
+- 📏 Height
+- ⚖️ Weight
+- 🎨 Skin tone
+- 🧍 Body shape
 
-if uploaded_file is not None:
-    image = Image.open(uploaded_file).convert("RGB")
-    st.image(image, caption="Uploaded Image", use_container_width=True)
+Click the button below to start your personalized recommendation.
+""")
 
-    skin_tone = extract_skin_tone(image)
-    body_shape = estimate_body_shape(gender, height, weight)
+if st.button("🚀 Start AI Recommendation"):
+    st.markdown("---")
+    uploaded_file = st.file_uploader("📸 Upload a clear photo of your face", type=["jpg", "jpeg", "png"])
+    gender = st.selectbox("👤 Select your gender", ["Male", "Female"])
+    height = st.number_input("📏 Your height (cm)", min_value=100, max_value=250, value=170)
+    weight = st.number_input("⚖️ Your weight (kg)", min_value=30, max_value=200, value=70)
 
-    st.markdown("### 🎨 Detected Skin Tone:")
-    st.success(skin_tone)
-
-    st.markdown("### 🧍 Estimated Body Shape:")
-    st.info(body_shape)
-
-    outfit_data = load_outfits()
-    user_data = {
-        "gender": gender,
-        "height": height,
-        "weight": weight,
-        "skin_tone": skin_tone,
-        "body_shape": body_shape
-    }
-
-    match = find_best_match(user_data, outfit_data)
-
-    if match:
-        st.markdown("### 👕 Recommended Outfit:")
-        st.write(match["recommendation"])
-        st.image(match["image_url"], caption="Example Outfit", use_container_width=True)
+    if uploaded_file is not None:
+        image = Image.open(uploaded_file).convert("RGB")
+        st.image(image, caption="Uploaded Image", use_container_width=True)
+        skin_tone = extract_skin_tone(image)
+        body_shape = estimate_body_shape(gender, height, weight)
+        st.markdown("### 🎨 Detected Skin Tone:")
+        st.success(skin_tone)
+        st.markdown("### 🧍 Estimated Body Shape:")
+        st.info(body_shape)
+        outfit_data = load_outfits()
+        user_data = {
+            "gender": gender,
+            "height": height,
+            "weight": weight,
+            "skin_tone": skin_tone,
+            "body_shape": body_shape
+        }
+        match = find_best_match(user_data, outfit_data)
+        if match:
+            st.markdown("### 👕 Recommended Outfit:")
+            st.write(match["recommendation"])
+            st.image(match["image_url"], caption="Example Outfit", use_container_width=True)
+        else:
+            st.warning("No suitable outfit found in the database.")
     else:
-        st.warning("No suitable outfit found in the database.")
-else:
-    st.info("Please upload a face image to get started.")
+        st.info("Please upload a face image to get started.")
