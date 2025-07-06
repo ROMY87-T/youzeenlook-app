@@ -1,0 +1,20 @@
+[
+  {
+    "gender": "Male",
+    "height": 180,
+    "weight": 75,
+    "skin_tone": "Tan",
+    "body_shape": "Athletic",
+    "recommendation": "Slim-fit shirt with tapered dark jeans for a clean modern look.",
+    "image_url": "https://images.pexels.com/photos/936117/pexels-photo-936117.jpeg"
+  },
+  {
+    "gender": "Female",
+    "height": 160,
+    "weight": 58,
+    "skin_tone": "Fair",
+    "body_shape": "Pear",
+    "recommendation": "High-waisted dress in light pastel shades with soft accessories.",
+    "image_url": "https://images.unsplash.com/photo-1618354691273-2cefdcd8f2e0"
+  }
+]
