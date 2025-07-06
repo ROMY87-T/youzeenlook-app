@@ -1,1 +1,93 @@
+[
+  {
+    "gender": "Male",
+    "height": 180,
+    "weight": 75,
+    "skin_tone": "Tan",
+    "body_shape": "Athletic",
+    "recommendation": "Slim-fit shirt with tapered dark jeans for a clean modern look.",
+    "image_url": "https://images.pexels.com/photos/936117/pexels-photo-936117.jpeg"
+  },
+  {
+    "gender": "Male",
+    "height": 170,
+    "weight": 65,
+    "skin_tone": "Fair",
+    "body_shape": "Slim",
+    "recommendation": "Layered casual look with light denim and a hoodie.",
+    "image_url": "https://images.pexels.com/photos/532588/pexels-photo-532588.jpeg"
+  },
+  {
+    "gender": "Male",
+    "height": 185,
+    "weight": 90,
+    "skin_tone": "Dark",
+    "body_shape": "Plus Size",
+    "recommendation": "Dark button-up shirt with straight jeans for balanced shape.",
+    "image_url": "https://images.pexels.com/photos/936119/pexels-photo-936119.jpeg"
+  },
+  {
+    "gender": "Female",
+    "height": 160,
+    "weight": 58,
+    "skin_tone": "Fair",
+    "body_shape": "Pear",
+    "recommendation": "High-waisted dress in light pastel shades with soft accessories.",
+    "image_url": "https://images.unsplash.com/photo-1618354691273-2cefdcd8f2e0"
+  },
+  {
+    "gender": "Female",
+    "height": 168,
+    "weight": 70,
+    "skin_tone": "Wheatish",
+    "body_shape": "Apple",
+    "recommendation": "V-neck top with A-line skirt to balance upper body.",
+    "image_url": "https://images.unsplash.com/photo-1520975918318-5a1c81c2e0b0"
+  },
+  {
+    "gender": "Female",
+    "height": 175,
+    "weight": 85,
+    "skin_tone": "Tan",
+    "body_shape": "Full Hourglass",
+    "recommendation": "Wrap dress with belt to highlight waistline.",
+    "image_url": "https://images.pexels.com/photos/1839907/pexels-photo-1839907.jpeg"
+  },
+  {
+    "gender": "Female",
+    "height": 155,
+    "weight": 50,
+    "skin_tone": "Fair",
+    "body_shape": "Rectangle",
+    "recommendation": "Patterned blouse with high-waist jeans to add curves.",
+    "image_url": "https://images.pexels.com/photos/8532614/pexels-photo-8532614.jpeg"
+  },
+  {
+    "gender": "Male",
+    "height": 178,
+    "weight": 72,
+    "skin_tone": "Wheatish",
+    "body_shape": "Muscular",
+    "recommendation": "Fitted polo and chinos for a sharp structured look.",
+    "image_url": "https://images.unsplash.com/photo-1520975869019-92b05e75bba2"
+  },
+  {
+    "gender": "Female",
+    "height": 162,
+    "weight": 62,
+    "skin_tone": "Dark",
+    "body_shape": "Apple",
+    "recommendation": "Empire-waist top with straight pants for smooth silhouette.",
+    "image_url": "https://images.pexels.com/photos/16017340/pexels-photo-16017340/free-photo-of-fashion-woman-girl-cute.jpeg"
+  },
+  {
+    "gender": "Male",
+    "height": 172,
+    "weight": 78,
+    "skin_tone": "Pinkish",
+    "body_shape": "Athletic",
+    "recommendation": "Casual sports jacket with joggers for an active look.",
+    "image_url": "https://images.unsplash.com/photo-1613673310073-73b4c8539c8d"
+  }
+]
 
